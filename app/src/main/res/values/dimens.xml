@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="v2ex_image_size">36dp</dimen>
+    <dimen name="v2ex_author_image_size">20dp</dimen>
+    <dimen name="v2ex_node_image_size">60dp</dimen>
+</resources>

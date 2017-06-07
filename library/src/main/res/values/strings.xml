@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">V2EX</string>
+    <string name="error_tips">哎，加载失败了ヽ(≧Д≦)ノ\n1.惨不忍睹的网络环境\n 2.服务器挂掉了</string>
+
+    <string name="about_text">\n
+        项目简介：基于MVP，以Dagger2+RxJava+\n
+        Retrofit+Butterknife+RxBus精心打造的Android基础框架，使用Material Design设计风格，使用Glide加载图片，模块已充分解耦。\n
+        项目地址：https://github.com/wcquan2008/V2exClient\n
+        作者：WCQUAN\n
+    </string>
+</resources>

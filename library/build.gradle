@@ -1,0 +1,80 @@
+apply plugin: 'com.android.library'
+apply plugin: 'android-apt'
+apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        resConfigs "zh"
+        multiDexEnabled true
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    //base
+    compile depMap.RecyclerView
+    compile depMap.CardView
+    compile depMap.Design
+    compile depMap.AppCompat
+    compile depMap.Percent
+
+    //ui
+    compile depMap.HtmlTextview
+
+    //rx
+    compile depMap.RxJava
+    compile depMap.RxAndroid
+    compile depMap.RxPermissions
+
+    //network
+    compile depMap.OkHttp
+    compile depMap.LoggingInterceptor
+    compile depMap.Retrofit
+    compile depMap.RetrofitRxJavaAdapter
+    compile depMap.GsonConverter
+    compile depMap.Gson
+    compile depMap.Jsoup
+
+    //di
+    compile depMap.Dagger
+    compile depMap.DaggerCompile
+    compile depMap.Butterknife
+    apt depMap.ButterknifeCompile
+    provided depMap.DaggerAnnotation
+
+    //load image
+    compile depMap.Glide
+    compile depMap.GlideOkhttpIntegration
+
+    //other
+    compile depMap.Multidex
+    compile depMap.Logger
+    compile depMap.Fragmentation
+    compile depMap.Toasty
+
+    //canary
+    debugCompile depMap.BlockcanaryAndroid
+    releaseCompile depMap.BlockcanaryNoOp
+    debugCompile depMap.LeakcanaryAndroid
+    releaseCompile depMap.LeakcanaryAndroidNoOp
+
+    androidTestCompile depMap.Annotations
+    androidTestCompile depMap.Runner
+    androidTestCompile depMap.Rules
+    testCompile depMap.JUnit
+}

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">V2EX</string>
+
+    <string name="title_setting">设置</string>
+    <string name="title_about">关于</string>
+
+    <string name="setting_cache">自动缓存</string>
+    <string name="setting_image">无图模式</string>
+    <string name="setting_night">夜间模式</string>
+    <string name="setting_about">关于V2EX</string>
+    <string name="setting_clear">清除缓存</string>
+    <string name="setting_basic">基本设置</string>
+    <string name="setting_other">其他</string>
+    <string name="setting_version">版本：</string>
+
+
+
+</resources>

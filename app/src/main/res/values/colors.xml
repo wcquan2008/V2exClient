@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_topic_text">#afafaf</color>
+    <color name="color_node_bg">#f2f3f5</color>
+</resources>
