@@ -19,13 +19,10 @@ public class PreferencesHelper implements IPreferencesHelper {
     private static final boolean DEFAULT_NO_IMAGE = false;
     private static final boolean DEFAULT_AUTO_SAVE = true;
 
-    private static final String SHAREDPREFERENCES_NAME = "v2exclient_sp";
-
     private final SharedPreferences mSPrefs;
 
-    @Inject
-    public PreferencesHelper() {
-        mSPrefs = BaseApplication.getInstance().getSharedPreferences(SHAREDPREFERENCES_NAME, Context.MODE_PRIVATE);
+    public PreferencesHelper(SharedPreferences sharedPreferences) {
+        this.mSPrefs = sharedPreferences;
     }
 
     @Override

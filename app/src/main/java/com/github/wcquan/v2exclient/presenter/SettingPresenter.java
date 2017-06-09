@@ -1,7 +1,7 @@
 package com.github.wcquan.v2exclient.presenter;
 
 import com.github.wcquan.library.base.RxPresenter;
-import com.github.wcquan.library.model.DataManager;
+import com.github.wcquan.library.model.pref.IPreferencesHelper;
 import com.github.wcquan.v2exclient.view.system.contract.SettingContract;
 
 import javax.inject.Inject;
@@ -12,41 +12,41 @@ import javax.inject.Inject;
 
 public class SettingPresenter extends RxPresenter<SettingContract.View> implements SettingContract.Presenter{
 
-    private DataManager mDataManager;
+    IPreferencesHelper mPreferencesHelper;
 
     @Inject
-    public SettingPresenter(DataManager mDataManager) {
-        this.mDataManager = mDataManager;
+    public SettingPresenter(IPreferencesHelper preferencesHelper) {
+        this.mPreferencesHelper = preferencesHelper;
     }
 
     @Override
     public boolean getNightModeState() {
-        return mDataManager.getNightModeState();
+        return mPreferencesHelper.getNightModeState();
     }
 
     @Override
     public void setNightModeState(boolean b) {
-       mDataManager.setNightModeState(b);
+        mPreferencesHelper.setNightModeState(b);
     }
 
     @Override
     public boolean getNoImageState() {
-        return mDataManager.getNoImageState();
+        return mPreferencesHelper.getNoImageState();
     }
 
     @Override
     public void setNoImageState(boolean state) {
-        mDataManager.setNoImageState(state);
+        mPreferencesHelper.setNoImageState(state);
     }
 
     @Override
     public boolean getAutoCacheState() {
-        return mDataManager.getAutoCacheState();
+        return mPreferencesHelper.getAutoCacheState();
     }
 
     @Override
     public void setAutoCacheState(boolean state) {
-        mDataManager.setAutoCacheState(state);
+        mPreferencesHelper.setAutoCacheState(state);
     }
 
 }

@@ -8,7 +8,7 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Function;
 import io.reactivex.functions.Predicate;
 import com.github.wcquan.library.base.RxPresenter;
-import com.github.wcquan.library.model.DataManager;
+import com.github.wcquan.library.model.http.api.V2exService;
 import com.github.wcquan.library.model.bean.ReplyBean;
 import com.github.wcquan.library.model.bean.TopicBean;
 import com.github.wcquan.library.util.RxUtil;
@@ -21,16 +21,16 @@ import com.github.wcquan.v2exclient.view.main.contract.TopicDetailContract;
 
 public class TopicDetailPresenter extends RxPresenter<TopicDetailContract.View> implements TopicDetailContract.Presenter{
 
-    private DataManager mDataManager;
+    private V2exService mV2exService;
 
     @Inject
-    public TopicDetailPresenter(DataManager mDataManager) {
-        this.mDataManager = mDataManager;
+    public TopicDetailPresenter(V2exService v2exService) {
+        this.mV2exService = v2exService;
     }
 
     @Override
     public void getContent(long topic_id) {
-        addSubscribe(mDataManager.fetchRepliesList(topic_id)
+        addSubscribe(mV2exService.getRepliesList(topic_id)
                 .compose(RxUtil.<List<ReplyBean>>rxSchedulerHelper())
                 .subscribeWith(new CommonSubscriber<List<ReplyBean>>(mView) {
                     @Override
@@ -43,7 +43,7 @@ public class TopicDetailPresenter extends RxPresenter<TopicDetailContract.View> 
 
     @Override
     public void getTopInfo(long topic_id) {
-        addSubscribe(mDataManager.fetchTopicInfo(topic_id)
+        addSubscribe(mV2exService.getTopicInfo(topic_id)
                 .compose(RxUtil.<List<TopicBean>>rxSchedulerHelper())
                 .filter(new Predicate<List<TopicBean>>() {
                     @Override

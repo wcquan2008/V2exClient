@@ -12,6 +12,8 @@ public class Constants {
 
     public static final String VSERION_NAME = "1.0";
 
+    public static final String DB_FILE_NAME = "V2exclient.realm";
+
     //================= PATH ====================
 
     public static final String PATH_DATA = BaseApplication.getInstance().getCacheDir().getAbsolutePath() + File.separator + "data";

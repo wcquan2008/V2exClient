@@ -2,16 +2,13 @@ package com.github.wcquan.v2exclient.presenter;
 
 import android.Manifest;
 
+import com.github.wcquan.library.model.pref.IPreferencesHelper;
 import com.tbruyelle.rxpermissions2.RxPermissions;
-
 import javax.inject.Inject;
-
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
-
 import com.github.wcquan.library.base.RxPresenter;
 import com.github.wcquan.library.component.RxBus;
-import com.github.wcquan.library.model.DataManager;
 import com.github.wcquan.library.model.event.NightModeEvent;
 import com.github.wcquan.library.util.RxUtil;
 import com.github.wcquan.library.widget.CommonSubscriber;
@@ -23,11 +20,11 @@ import com.github.wcquan.v2exclient.view.main.contract.MainContract;
 
 public class MainPresenter extends RxPresenter<MainContract.View> implements MainContract.Presenter{
 
-    private DataManager mDataManager;
+    private IPreferencesHelper mPreferencesHelper;
 
     @Inject
-    public MainPresenter(DataManager mDataManager) {
-        this.mDataManager = mDataManager;
+    public MainPresenter(IPreferencesHelper preferencesHelper) {
+        this.mPreferencesHelper = preferencesHelper;
     }
 
     @Override
@@ -77,7 +74,7 @@ public class MainPresenter extends RxPresenter<MainContract.View> implements Mai
 
     @Override
     public void setNightModeState(boolean b) {
-        mDataManager.setNightModeState(b);
+        mPreferencesHelper.setNightModeState(b);
     }
 
 }

@@ -4,7 +4,7 @@ package com.github.wcquan.library.di.module;
 import com.github.wcquan.library.BuildConfig;
 
 import com.github.wcquan.library.app.Constants;
-import com.github.wcquan.library.http.api.V2exApi;
+import com.github.wcquan.library.model.http.api.V2exService;
 import com.github.wcquan.library.util.SystemUtil;
 
 import java.io.File;
@@ -37,21 +37,9 @@ public class HttpModule {
 
     @Singleton
     @Provides
-    Retrofit.Builder provideRetrofitBuilder() {
-        return new Retrofit.Builder();
-    }
-
-
-    @Singleton
-    @Provides
-    OkHttpClient.Builder provideOkHttpBuilder() {
-        return new OkHttpClient.Builder();
-    }
-
-    @Singleton
-    @Provides
-    Retrofit provideRetrofit(Retrofit.Builder builder, OkHttpClient client) {
-        return builder
+    Retrofit provideRetrofit(OkHttpClient client) {
+        return new Retrofit
+                .Builder()
                 .baseUrl(HOST)
                 .client(client)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -61,7 +49,8 @@ public class HttpModule {
 
     @Singleton
     @Provides
-    OkHttpClient provideClient(OkHttpClient.Builder builder) {
+    OkHttpClient provideClient() {
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
         if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
             loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
@@ -124,7 +113,7 @@ public class HttpModule {
 
     @Singleton
     @Provides
-    V2exApi provideApiService(Retrofit retrofit) {
-        return retrofit.create(V2exApi.class);
+    V2exService provideApiService(Retrofit retrofit) {
+        return retrofit.create(V2exService.class);
     }
 }

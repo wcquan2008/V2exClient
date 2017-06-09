@@ -3,7 +3,7 @@ package com.github.wcquan.library.widget;
 import android.text.TextUtils;
 
 import com.github.wcquan.library.base.BaseView;
-import com.github.wcquan.library.http.exception.ApiException;
+import com.github.wcquan.library.model.http.exception.ApiException;
 import com.github.wcquan.library.util.LogUtil;
 
 import io.reactivex.subscribers.ResourceSubscriber;

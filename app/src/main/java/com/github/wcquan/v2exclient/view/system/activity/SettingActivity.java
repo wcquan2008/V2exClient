@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.github.wcquan.library.app.BaseApplication;
 import com.github.wcquan.library.app.Constants;
 import com.github.wcquan.library.component.ACache;
 import com.github.wcquan.library.component.RxBus;
@@ -67,7 +68,7 @@ public class SettingActivity  extends BaseActivity<SettingPresenter> implements 
     @Override
     protected void initEventAndData() {
         setToolBar(toolBar, R.string.title_setting);
-        cacheFile = new File(Constants.PATH_CACHE);
+        cacheFile = new File( Constants.PATH_CACHE);
         tvSettingClear.setText(ACache.getCacheSize(cacheFile));
         cbSettingCache.setChecked(mPresenter.getAutoCacheState());
         cbSettingImage.setChecked(mPresenter.getNoImageState());

@@ -1,33 +1,45 @@
 package com.github.wcquan.library.di.component;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import com.github.wcquan.library.app.BaseApplication;
-import com.github.wcquan.library.db.RealmHelper;
 import com.github.wcquan.library.di.module.AppModule;
-import com.github.wcquan.library.di.module.HttpModule;
+import com.github.wcquan.library.model.http.api.V2exService;
+import com.github.wcquan.library.model.db.IDBHelper;
+import com.github.wcquan.library.model.pref.IPreferencesHelper;
 
 import javax.inject.Singleton;
 
 import dagger.Component;
-
-import com.github.wcquan.library.http.RetrofitHelper;
-import com.github.wcquan.library.model.DataManager;
-import com.github.wcquan.library.model.pref.PreferencesHelper;
+import io.realm.Realm;
+import okhttp3.OkHttpClient;
+import retrofit2.Retrofit;
 
 /**
  * Created by WCQUAN on 2017-06-01.
  */
 
 @Singleton
-@Component(modules = {AppModule.class, HttpModule.class})
+@Component(modules = {AppModule.class})
 public interface AppComponent {
 
-    BaseApplication getContext();  // 提供App的Context
+    BaseApplication app();
 
-    DataManager getDataManager(); //数据中心
+    Context appContext();  // 提供App的Context
 
-    RetrofitHelper retrofitHelper();  //提供http的帮助类
+    SharedPreferences preference();
 
-    RealmHelper realmHelper();    //提供数据库帮助类
+    Retrofit retrofit();
 
-    PreferencesHelper preferencesHelper(); //提供sp帮助类
+    OkHttpClient okHttpClient();
+
+    Realm realm();
+
+
+    V2exService v2exService();     //API类
+
+    IDBHelper realmHelper();    //提供数据库帮助类
+
+    IPreferencesHelper preferencesHelper(); //提供sp帮助类
 }

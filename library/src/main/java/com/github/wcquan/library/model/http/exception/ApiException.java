@@ -1,4 +1,4 @@
-package com.github.wcquan.library.http.exception;
+package com.github.wcquan.library.model.http.exception;
 
 /**
  * Created by WCQUAN on 2017-06-01.

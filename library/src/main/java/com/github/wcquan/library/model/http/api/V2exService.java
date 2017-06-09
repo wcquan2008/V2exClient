@@ -1,4 +1,4 @@
-package com.github.wcquan.library.http.api;
+package com.github.wcquan.library.model.http.api;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import retrofit2.http.Query;
  * Created by WCQUAN on 2017-06-01.
  */
 
-public interface V2exApi {
+public interface V2exService {
 
     /**
      * 获取作者信息

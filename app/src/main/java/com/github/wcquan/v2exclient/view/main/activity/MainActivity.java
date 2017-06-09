@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 import com.github.wcquan.library.adapter.BaseFragmentPagerAdapter;
 import com.github.wcquan.library.app.Constants;
-import com.github.wcquan.library.util.DisplayUtils;
+import com.github.wcquan.library.util.DeviceUtil;
 import com.github.wcquan.v2exclient.R;
 import com.github.wcquan.v2exclient.base.BaseActivity;
 import com.github.wcquan.v2exclient.presenter.MainPresenter;
@@ -85,7 +85,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
     protected void initEventAndData() {
         // 设置 Toolbar 高度为 80dp，适配状态栏
         ViewGroup.LayoutParams layoutParams = mToolbar.getLayoutParams();
-        layoutParams.height = DisplayUtils.dp2px(80, this);
+        layoutParams.height = DeviceUtil.dp2px(80, this);
         mToolbar.setLayoutParams(layoutParams);
 
 
@@ -131,7 +131,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
                         mFloatingActionButton.hide();
                         state = CollapsingToolbarLayoutState.COLLAPSED; // 修改状态标记为折叠
                         CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) mAppBarLayout.getLayoutParams();
-                        layoutParams.height = DisplayUtils.dp2px(240, MainActivity.this);
+                        layoutParams.height = DeviceUtil.dp2px(240, MainActivity.this);
                         mAppBarLayout.setLayoutParams(layoutParams);
                     }
                 } else {
