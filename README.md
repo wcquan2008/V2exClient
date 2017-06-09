@@ -4,9 +4,9 @@ V2exClient, 基于MVP，以Dagger2 + RxJava2 + Retrofit + Butterknife + RxBus打
 
 ## 相关截图：
 ![image](https://raw.githubusercontent.com/wcquan2008/V2exClient/master/screenshot/index.png)
-主页
+
 ![image](https://raw.githubusercontent.com/wcquan2008/V2exClient/master/screenshot/detail.png)
-详情页
+
 
 ## 致谢开源库：
 * [RxJava](https://github.com/ReactiveX/RxJava)
