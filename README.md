@@ -2,6 +2,12 @@
 
 V2exClient, 基于MVP，以Dagger2 + RxJava2 + Retrofit + Butterknife + RxBus打造的Android基础框架，使用Material Design设计风格，使用Glide加载图片，以V2EX-API为数据来源的一款 V2ex简易客户端。
 
+## 相关截图：
+![image](https://raw.githubusercontent.com/wcquan2008/V2exClient/master/screenshot/index.png)
+主页
+![image](https://raw.githubusercontent.com/wcquan2008/V2exClient/master/screenshot/detail.png)
+详情页
+
 ## 致谢开源库：
 * [RxJava](https://github.com/ReactiveX/RxJava)
 * [RxAndroid](https://github.com/ReactiveX/RxAndroid)
