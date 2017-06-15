@@ -21,7 +21,6 @@ V2exClient, 基于MVP，以Dagger2 + RxJava2 + Retrofit + Butterknife + RxBus打
 * [Fragmentation](https://github.com/YoKeyword/Fragmentation)
 * [BlockCanary](https://github.com/markzhai/AndroidPerformanceMonitor)
 * [LeakCanary](https://github.com/square/leakcanary)
-* [BlockCanary](https://github.com/markzhai/AndroidPerformanceMonitor)
 * [DachshundTabLayout](https://github.com/Andy671/Dachshund-Tab-Layout)
 
 ## 特别感谢：
